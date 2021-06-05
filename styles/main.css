@@ -1,0 +1,247 @@
+body
+{
+    background: rgb(58, 58, 58);
+    color:white;
+    font-family: Helvetica Neue, Helvetica, Arial;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+
+header
+{
+    background-color:black;
+    background-image: url("../images/cartoonHeader.jpg");
+    background-size: 100%;
+    background-position: center;
+    height: 400px;
+    padding: 50px 0 0 0;
+    text-align: center;
+}
+
+header a
+{
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-top: 40px;
+}
+
+header .mobile
+{
+    display: none;
+}
+
+header .logo a
+{
+    background-image: url("../images/logo2.png");
+    background-size: 250px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 210px;
+    position: relative;
+    text-indent: -999999999px;
+    top: -55px;
+    width: 250px;
+}
+
+
+nav ul
+{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav li
+{
+    display: inline-block;
+    margin-right: 20px; 
+   
+}
+
+/*nav li:hover
+{
+    background-color: white;
+}*/
+
+a
+{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+nav a:hover
+{
+    text-decoration: underline;
+}
+
+/* responsive rules */
+
+@media screen and (max-width: 709px)
+{
+
+    header
+    {
+        height: 230px;
+    }
+
+    header .mobile
+    {
+        display: inline-block;
+        padding: 0 0 20px 0;
+    }
+
+    header .desktop
+    {
+        display: none;
+    }
+
+    header .logo a
+    {
+        background-size: 200px;
+    }
+
+}
+
+
+/* Features */
+
+.feature-box
+{
+    background: white;
+    color:grey;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.feature-box.sales figure
+{
+    margin: auto;
+    text-align: center;
+    text-transform: uppercase;
+    width: 200px;
+}
+
+
+.feature-box.sales img
+{
+    border: 1px solid white;
+    border-radius: 50%;
+    box-shadow: grey 0px 0px 10px;
+    width: 200px;
+}
+
+.feature-box.closeouts div
+{
+    background:rgb(147, 216, 18);
+}
+
+.feature-box.sales img:hover
+{
+    box-shadow: red 0px 0px 20px;
+}
+
+.hide
+{
+    display: none;
+}
+
+li input
+{
+    display: none;
+}
+
+/*When in edit class span dissappears while input appears*/
+li.edit span
+{
+    display: none;
+}
+
+li.edit input
+{
+    display: initial;
+}
+
+
+
+@media screen and (min-width:640px) and (max-width:750px)
+{
+    .feature-box.sales img
+    {
+        width: 175px;
+    }
+
+    .feature-box.sales figure
+    {
+        width: 175px;
+    }
+}
+
+@media screen and (min-width: 876px) and (max-width:1028px)
+{
+    .feature-box.sales img
+    {
+        width: 235px;
+    }
+
+    .feature-box.sales figure
+    {
+        width: 235px;
+    }
+}
+
+@media screen and (min-width: 1028px) and (max-width: 1200px)
+{
+    .feature-box.sales img
+    {
+        width: 270px;
+    }
+
+    .feature-box.sales figure
+    {
+        width: 270px;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px)
+{
+    .feature-box.sales img
+    {
+        width: 300px;
+    }
+
+    .feature-box.sales figure
+    {
+        width: 300px;
+    }
+}
+
+@media screen and (min-width: 1400px)
+{
+    .feature-box.sales img
+    {
+        width: 375px;
+    }
+
+    .feature-box.sales figure
+    {
+        width: 375px;
+    }
+}
+
+/* Footer */
+
+footer
+{
+    background:black;
+    color: grey;
+    font-size: 12px;
+    padding: 20px 20px;
+
+    text-align: center;
+}
