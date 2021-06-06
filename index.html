@@ -25,16 +25,16 @@
         </header>
         <section class="feature-box sales">
             <figure>
-                <img src="images/burger.jpg" alt="Amazing homemade burgers">
+                <img id="burgerImage" src="images/burger.jpg" alt="Amazing homemade burgers">
                 <figcaption>Homemade burgers</figcaption>
             </figure>
             <figure>
-                <img src="images/pizza.jpg" alt="Amazing homemade burgers">
+                <img id="pizzaImage" src="images/pizza.jpg" alt="Amazing homemade burgers">
                 <figcaption>Oven-baked pizza</figcaption>
             </figure>
-            <figure>
-                <img src="images/wings.jpg" alt="Amazing homemade burgers">
-                <figcaption>Succalant wings</figcaption>
+            <figure id="wingsFigure">
+                <img id="wingsImage" src="images/wings.jpg" alt="Amazing homemade burgers">
+                <figcaption class="wingsCaption">Succalant wings</figcaption>
             </figure>
         </section>
         <section class="feature-box closeouts">
@@ -76,12 +76,51 @@
 
         </ul>
 
+        <button class = "imageButton" data-imageId="#burgerImage">Burger button</button>
+        <button class = "imageButton" data-imageId="#pizzaImage">Pizza button</button>
+        <button class = "imageButton" data-imageId="#wingsImage">Wings button</button>
+
         <footer>
             64 Zoo Lane • 07439582347 • us&gmail.com
         </footer>
 
         <script src="scripts/main.js"></script>
         <script src="scripts/events.js"></script>
+
+
+        <script src="jquery.js"></script>
+
+
+        <script>
+
+            /*All jquery code goes inside this function*/
+            $(function(){          /*The '$' is used to access jquery*/
+                
+                /*Targeting different elements with their IDs to animate and change them with jquery*/
+                $("#SpongeBob").hide(1000).show(500).slideUp(1000).delay(2000).slideDown(1000).fadeToggle(1000).fadeToggle(2000);
+                $("#Gintoki").css({color:"red", fontWeight:"bold"});
+
+                /*Adding key listeners*/
+                $("#burgerImage").on("click", function(){
+                    $("#burgerImage").toggle(500).toggle(500);
+                });
+
+                $("#pizzaImage").on("mouseover", function(){
+                    $("#pizzaImage").toggle(500).toggle(500);
+                });
+
+                $("#wingsImage").on("click", function(){
+                    $("#wingsFigure .wingsCaption").html("meow");
+                });
+
+                $(".imageButton").on("click", function(){
+                    var imageId = $(this).attr("data-imageId");
+                    $(imageId).toggle();
+                });
+
+            });
+
+        </script>
 
 
     </body>
