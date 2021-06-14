@@ -1,5 +1,6 @@
 body
 {
+    
     background: rgb(58, 58, 58);
     color:white;
     font-family: Helvetica Neue, Helvetica, Arial;
@@ -11,11 +12,12 @@ body
 
 header
 {
-    background-color:black;
+   
     background-image: url("../images/cartoonHeader.jpg");
     background-size: 100%;
     background-position: center;
-    height: 400px;
+    font-size: 1px;
+    height: 880px;
     padding: 50px 0 0 0;
     text-align: center;
 }
@@ -30,36 +32,58 @@ header a
 
 header .mobile
 {
+    
     display: none;
+}
+
+header .logo
+{
+    height: 150px;
 }
 
 header .logo a
 {
     background-image: url("../images/logo2.png");
-    background-size: 250px;
+    background-size: 200px;
     background-repeat: no-repeat;
     display: inline-block;
-    height: 210px;
+    height: 170px;
+    left: 10%;
     position: relative;
     text-indent: -999999999px;
-    top: -55px;
-    width: 250px;
+    top: -45px;
+    width: 200px;
 }
-
 
 nav ul
 {
-    margin: 0;
+    height: 170px;
+    position: fixed;
     padding: 0;
     list-style-type: none;
+    left: 6%;
+    margin-left: -30px;
+    margin-top: -20px;
+    width: 100%;
 }
 
 nav li
 {
     display: inline-block;
     margin-right: 20px; 
-   
 }
+
+header div
+{
+   
+    background-color: white;
+    display: none;
+    height: 370px;
+    margin-left: -500px;
+    margin-top: -330px;
+    
+}
+
 
 /*nav li:hover
 {
@@ -82,11 +106,7 @@ nav a:hover
 
 @media screen and (max-width: 709px)
 {
-
-    header
-    {
-        height: 230px;
-    }
+ 
 
     header .mobile
     {
@@ -99,9 +119,28 @@ nav a:hover
         display: none;
     }
 
+    nav ul
+    {
+        height: 210px;
+    }
+
     header .logo a
     {
-        background-size: 200px;
+        background-size: 180px;
+        left: 10%;
+        width: 180px;
+    }
+
+    header div
+    {
+        height: 345px;
+    }
+
+    .feature-box.sales img:hover
+    {
+        display: inline-block;
+        width: 220px;
+        margin: -10px;
     }
 
 }
@@ -121,19 +160,24 @@ nav a:hover
 
 .feature-box.sales figure
 {
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     text-transform: uppercase;
     width: 200px;
 }
 
-
 .feature-box.sales img
 {
     border: 1px solid white;
-    border-radius: 50%;
+    /*border-radius: 50%;*/
     box-shadow: grey 0px 0px 10px;
     width: 200px;
+}
+
+.caption
+{
+    margin-top: 20px;
 }
 
 .feature-box.closeouts div
@@ -143,7 +187,22 @@ nav a:hover
 
 .feature-box.sales img:hover
 {
-    box-shadow: red 0px 0px 20px;
+    width: 220px;
+    margin: -10px;
+}
+
+.feature-box.sales div
+{
+    border: 3px solid red;
+    display: none;
+    height: 100px;
+    margin: auto;
+    margin: -10px;
+    margin-top: 30px;
+    padding: 5px;
+    text-align: center;
+    text-transform: lowercase;
+    width: 207px;
 }
 
 .hide
@@ -171,7 +230,25 @@ li.edit input
 
 @media screen and (min-width:640px) and (max-width:750px)
 {
-    .feature-box.sales img
+    header .mobile
+    {
+        display: inline-block;
+        padding: 0 0 20px 0;
+    }
+
+    header .desktop
+    {
+        display: none;
+    }
+
+    header .logo a
+    {
+        height: 170px;
+        left: 23%;
+        width: 300px;
+    }
+
+    .feature-box.sales img.normalSize
     {
         width: 175px;
     }
@@ -179,12 +256,24 @@ li.edit input
     .feature-box.sales figure
     {
         width: 175px;
+    }
+
+    .feature-box.sales div
+    {
+        width: 182px;
+        height: 100px;
+    }
+
+    .feature-box.sales img:hover
+    {
+        width: 195px;
+        margin: -10px;
     }
 }
 
 @media screen and (min-width: 876px) and (max-width:1028px)
 {
-    .feature-box.sales img
+    .feature-box.sales img.normalSize
     {
         width: 235px;
     }
@@ -192,12 +281,24 @@ li.edit input
     .feature-box.sales figure
     {
         width: 235px;
+    }
+
+    .feature-box.sales div
+    {
+        width: 242px;
+        height: 130px;
+    }
+
+    .feature-box.sales img:hover
+    {
+        width: 255px;
+        margin: -10px;
     }
 }
 
 @media screen and (min-width: 1028px) and (max-width: 1200px)
 {
-    .feature-box.sales img
+    .feature-box.sales img.normalSize
     {
         width: 270px;
     }
@@ -205,12 +306,24 @@ li.edit input
     .feature-box.sales figure
     {
         width: 270px;
+    }
+
+    .feature-box.sales div
+    {
+        width: 277px;
+        height: 146px;
+    }
+
+    .feature-box.sales img:hover
+    {
+        width: 290px;
+        margin: -10px;
     }
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1400px)
 {
-    .feature-box.sales img
+    .feature-box.sales img.normalSize
     {
         width: 300px;
     }
@@ -218,12 +331,25 @@ li.edit input
     .feature-box.sales figure
     {
         width: 300px;
+    }
+
+    .feature-box.sales div
+    {
+        width: 307px;
+        height: 161px;
+    }
+
+    .feature-box.sales img:hover
+    {
+        width: 320px;
+        margin: -10px;
     }
 }
 
 @media screen and (min-width: 1400px)
 {
-    .feature-box.sales img
+
+    .feature-box.sales img.normalSize
     {
         width: 375px;
     }
@@ -231,6 +357,18 @@ li.edit input
     .feature-box.sales figure
     {
         width: 375px;
+    }
+
+    .feature-box.sales div
+    {
+        width: 382px;
+        height: 198px;
+    }
+
+    .feature-box.sales img:hover
+    {
+        width: 395px;
+        margin: -10px;
     }
 }
 

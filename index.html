@@ -13,6 +13,7 @@
         <header>
             <nav>
                 <ul>
+                    
                     <li><a href="index.html">Home</a></li>
                     <li><a href="menu.html">Menu</a></li>
                     <li class="mobile"><a href="locations.html">Locations</a></li>
@@ -20,21 +21,26 @@
                     <li class="logo"><a href="index.html">Hasnats logo</a></li>
                     <li class="desktop"><a href="locations.html">Locations</a></li>
                     <li class="desktop"><a href="contact.html">Contacts</a></li>
+                    <div id="navBox"></div>
                 </ul>
             </nav>
+            
         </header>
         <section class="feature-box sales">
             <figure>
-                <img id="burgerImage" src="images/burger.jpg" alt="Amazing homemade burgers">
-                <figcaption>Homemade burgers</figcaption>
+                <img class="normalSize" data-descriptionID="description1" id="burgerImage" src="images/burger.jpg" alt="Amazing homemade burgers">
+                <figcaption class="caption">Homemade burgers</figcaption>
+                <div id="description1">Our amazing burgers are made mostly with real meat! We are not liable for any health defects you may experience within 24 hours of consumption</div>
             </figure>
             <figure>
-                <img id="pizzaImage" src="images/pizza.jpg" alt="Amazing homemade burgers">
-                <figcaption>Oven-baked pizza</figcaption>
+                <img class="normalSize" data-descriptionID="description2" id="pizzaImage" src="images/pizza.jpg" alt="Amazing homemade burgers">
+                <figcaption class="caption">Oven-baked pizza</figcaption>
+                <div id="description2">a</div>
             </figure>
             <figure id="wingsFigure">
-                <img id="wingsImage" src="images/wings.jpg" alt="Amazing homemade burgers">
-                <figcaption class="wingsCaption">Succalant wings</figcaption>
+                <img class="normalSize" data-descriptionID="description3" id="wingsImage" src="images/wings.jpg" alt="Amazing homemade burgers">
+                <figcaption class="caption">Succalant wings</figcaption>
+                <div id="description3">a</div>
             </figure>
         </section>
         <section class="feature-box closeouts">
@@ -95,28 +101,53 @@
 
             /*All jquery code goes inside this function*/
             $(function(){          /*The '$' is used to access jquery*/
-                
+               
+            
                 /*Targeting different elements with their IDs to animate and change them with jquery*/
-                $("#SpongeBob").hide(1000).show(500).slideUp(1000).delay(2000).slideDown(1000).fadeToggle(1000).fadeToggle(2000);
-                $("#Gintoki").css({color:"red", fontWeight:"bold"});
+                //$("#SpongeBob").hide(1000).show(500).slideUp(1000).delay(2000).slideDown(1000).fadeToggle(1000).fadeToggle(2000);
+                //$("#Gintoki").css({color:"red", fontWeight:"bold"});
 
                 /*Adding key listeners*/
-                $("#burgerImage").on("click", function(){
-                    $("#burgerImage").toggle(500).toggle(500);
+                //$("#burgerImage").on("click", function(){
+                    //$("#burgerImage").toggle(500).toggle(500);
+                //});
+
+                //$("#pizzaImage").on("mouseover", function(){
+                    //$("#pizzaImage").toggle(500).toggle(500);
+                //});
+
+                //$("#wingsImage").on("click", function(){
+                    //$("#wingsFigure .wingsCaption").html("Meow");
+                //});
+
+                //$(".imageButton").on("click", function(){
+                    //var imageId = $(this).attr("data-imageId");
+                    //$(imageId).toggle();
+                //});
+
+                /*$(".normalSize").on("mouseenter", function(){
+                    $(this).removeClass("normalSize");
                 });
 
-                $("#pizzaImage").on("mouseover", function(){
-                    $("#pizzaImage").toggle(500).toggle(500);
+                $(".normalSize").on("mouseleave", function(){
+                    $(this).addClass("normalSize");
+                });*/
+
+                $(".normalSize").on("mouseenter", function(){
+                    var descriptionID = $(this).attr("data-descriptionID");
+                    $("#"+descriptionID).slideDown(250);
                 });
 
-                $("#wingsImage").on("click", function(){
-                    $("#wingsFigure .wingsCaption").html("meow");
+                $(".normalSize").on("mouseleave", function(){
+                    var descriptionID = $(this).attr("data-descriptionID");
+                    $("#"+descriptionID).slideUp(250);
+                    alert($(window).scrollTop());
                 });
 
-                $(".imageButton").on("click", function(){
-                    var imageId = $(this).attr("data-imageId");
-                    $(imageId).toggle();
-                });
+                $(window).on("scroll", function(){ 
+                    if ($(window).scrollTop() < 710) $("#navBox").fadeOut(100);
+                    else if ($(window).scrollTop() > 710) $("#navBox").fadeIn(100);
+                })
 
             });
 
