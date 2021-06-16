@@ -1,11 +1,11 @@
 body
 {
     
-    background: rgb(58, 58, 58);
+    background: white;
     color:white;
     font-family: Helvetica Neue, Helvetica, Arial;
     margin: 0;
-    padding: 0;
+    padding: 13px;
 }
 
 /* Header */
@@ -48,7 +48,6 @@ header .logo a
     background-repeat: no-repeat;
     display: inline-block;
     height: 170px;
-    left: 10%;
     position: relative;
     text-indent: -999999999px;
     top: -45px;
@@ -61,8 +60,6 @@ nav ul
     position: fixed;
     padding: 0;
     list-style-type: none;
-    left: 6%;
-    margin-left: -30px;
     margin-top: -20px;
     width: 100%;
 }
@@ -73,10 +70,11 @@ nav li
     margin-right: 20px; 
 }
 
-header div
+#navBox
 {
    
     background-color: white;
+    color: black;
     display: none;
     height: 370px;
     margin-left: -500px;
@@ -84,7 +82,50 @@ header div
     
 }
 
+#welcome
+{
+    
+    color: rgb(222,24,53);
+    font-family: arial;
+    font-size: 30px;
+    margin-top: 300px;
+}
 
+#wendyFont
+{
+    color: rgb(222,24,53);
+    font-family: arial;
+}
+
+#line
+{
+    background-color: white;
+    background-position: center;
+    height: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -70px;
+    width: 330px;
+}
+
+#aboutUs
+{
+    border: 0;
+    border-radius: 5px;
+    color: rgb(222,24,53);
+    font-size: 35px;
+}
+
+#aboutUs:hover
+{
+    background-color:rgb(222,24,53);
+    color: white;
+}
+
+.scrollFade
+{
+    opacity: 1;
+}
 /*nav li:hover
 {
     background-color: white;
@@ -99,7 +140,7 @@ a
 
 nav a:hover
 {
-    text-decoration: underline;
+    color: rgb(222,24,53);
 }
 
 /* responsive rules */
@@ -131,7 +172,7 @@ nav a:hover
         width: 180px;
     }
 
-    header div
+    #navBox
     {
         height: 345px;
     }

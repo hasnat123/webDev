@@ -15,16 +15,22 @@
                 <ul>
                     
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li class="mobile"><a href="locations.html">Locations</a></li>
+                    <li><a href="locations.html">Locations</li>
+                    <li class="mobile"><a href="menu.html">Menu</a></a></li>
                     <li class="mobile"><a href="contact.html">Contacts</a></li>
                     <li class="logo"><a href="index.html">Hasnats logo</a></li>
-                    <li class="desktop"><a href="locations.html">Locations</a></li>
+                    <li class="desktop"><a href="menu.html">Menu</a></li>
                     <li class="desktop"><a href="contact.html">Contacts</a></li>
                     <div id="navBox"></div>
                 </ul>
             </nav>
             
+            <div id="welcome" class="scrollFade">
+                <h1>Welcome to<br><strong id="wendyFont">Wendy's</strong></h1>
+                <button id="aboutUs"><strong>About Us</strong></button>
+            </div>
+            <div id="line" class="scrollFade"></div>
+
         </header>
         <section class="feature-box sales">
             <figure>
@@ -141,12 +147,14 @@
                 $(".normalSize").on("mouseleave", function(){
                     var descriptionID = $(this).attr("data-descriptionID");
                     $("#"+descriptionID).slideUp(250);
-                    alert($(window).scrollTop());
                 });
 
                 $(window).on("scroll", function(){ 
                     if ($(window).scrollTop() < 710) $("#navBox").fadeOut(100);
                     else if ($(window).scrollTop() > 710) $("#navBox").fadeIn(100);
+
+                    $(" .scrollFade").css("opacity", 1 - $(window).scrollTop() / 200);
+                    $("#line").css("width", 330 - $(window).scrollTop());
                 })
 
             });
