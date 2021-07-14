@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include("../partials/head.ejs") %>
+
+<body>
+    <!--'minus' sign used when dealing with special key words like 'include'. 
+    The 'equals' sign causes all code including key words to be converted to string format-->
+    <%- include("../partials/nav.ejs") %>
+
+    <div class="blogs content">
+        <h2>All Blogs</h2>
+    
+        <% if (blogs.length > 0) 
+           { %>
+          <% blogs.forEach(function(blog)
+             { %>
+                <a class="single" href="/blogs/<%=blog._id%>">
+                  <h3 class="title"><%= blog.title %></h3>
+                  <p class="snippet"><%= blog.snippet %></p>
+                </a>
+          <% }) %>
+        <% } else { %> <P>There are no logs to display...</P> <% } %> 
+        
+      </div>
+</body>
+
+<%- include("../partials/footer.ejs") %>
+
+</html>

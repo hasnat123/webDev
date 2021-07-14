@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include("../partials/head.ejs") %>
+
+<body>
+    <%- include("../partials/nav.ejs") %>
+
+    <div class="details content">
+        <h2><%= blog.title %></h2>
+        <div class="content">
+            <p><%= blog.body %></p>
+        </div>
+        <a class="delete", data-doc="<%=blog._id%>">Delete</a>    
+    </div>
+    
+    <%- include("../partials/footer.ejs") %>
+
+    <!--Scripts run on browser, not server-->
+    <script>
+        const deleteButton = document.querySelector("a.delete");
+
+        deleteButton.addEventListener("click", function(event)
+        {
+            //This is where delete request is being sent
+            const endpoint = `/blogs/${deleteButton.dataset.doc}`; //String literal used instead of regular string as it allows embedded expressions meaning concatenation is much easier and manual line-breaks are unnecessary 
+
+            //Fetch API used to send delete request to 'endpoint'
+            fetch(endpoint, { method: "DELETE" })
+                .then(function(response) { return response.json() }) //'response' is json data sent from server. 'json()' function used to send data to a javascript object where it can be used
+                .then(function(data) { window.location.href = data.redirect; })//'data' is new javascript object containing json data i.e the redirect
+                .catch(function(err) { console.log(err); });
+        })
+    </script>
+
+</body>
+</html>

@@ -2,7 +2,7 @@ body
 {
     
     background: white;
-    color:white;
+    color:black;
     font-family: Helvetica Neue, Helvetica, Arial;
     margin: 0;
     padding: 13px;
@@ -104,7 +104,7 @@ nav li
     height: 2px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -70px;
+    margin-top: -80px;
     width: 330px;
 }
 
@@ -113,7 +113,7 @@ nav li
     border: 0;
     border-radius: 5px;
     color: rgb(222,24,53);
-    font-size: 35px;
+    font-size: 45px;
 }
 
 #aboutUs:hover
@@ -234,7 +234,7 @@ nav a:hover
 
 .feature-box.sales div
 {
-    border: 3px solid red;
+    border: 3px solid rgb(222,24,53);
     display: none;
     height: 100px;
     margin: auto;
@@ -267,7 +267,74 @@ li.edit input
     display: initial;
 }
 
+/*Panels*/
 
+.tab-panels ul
+{
+    margin: 0;
+    padding: 0;
+}
+
+.tab-panels ul li
+{
+    background-color: rgb(222,24,53);
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    list-style-type: none;
+    margin:0;
+    padding: 10px;
+}
+
+.tab-panels ul li.active
+{
+    background-color: rgb(182, 15, 40);
+}
+
+.tab-panels .panel
+{
+    background-color: rgb(204, 50, 73);
+    display: none;
+    height: 100px;
+    margin: 0 0 13px 0;
+    padding: 30px;
+}
+
+.tab-panels .panel.active
+{
+    display: block;
+}
+
+/*Image slider*/
+
+#slider
+{
+    height: 400px;
+    overflow: hidden;
+    width: 720px;
+}
+
+#slider .slides
+{
+    display: block;
+    height: 400px;
+    margin: 0;
+    padding: 0;
+    width: 6000px;
+}
+
+#slider .slide
+{
+    float: left;
+    height: 400px;
+    list-style-type: none;
+    width: 720px;
+}
+
+.slides img
+{
+    width: 720px;
+}
 
 @media screen and (min-width:640px) and (max-width:750px)
 {
